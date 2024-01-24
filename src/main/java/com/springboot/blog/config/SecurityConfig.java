@@ -38,7 +38,7 @@ public AuthenticationManager authenticationManager(AuthenticationConfiguration c
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf((csrf) -> csrf.disable())
                 .authorizeHttpRequests((authorize)->
-//                        authorize.anyRequest().authenticated()
+
                   authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
                           .requestMatchers("/api/auth/**").permitAll()
                           .anyRequest().authenticated()
