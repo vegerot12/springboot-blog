@@ -80,12 +80,12 @@ public class PostController {
         responseCode = "200",
         description = "Http status 200 SUCCESS"
 )
-    @GetMapping(value="/api/posts/{id}" , params="version=1")
+    @GetMapping(value="/api/posts/{id}" , headers = "X-API-VERSION=1")
     public ResponseEntity<PostDto> getPostById(@PathVariable(name = "id") long id){
         return ResponseEntity.ok(postService.getPostById(id));
     }
     // supports tags
-    @GetMapping(value = "/api/posts/{id}" , params="version=2")
+    @GetMapping(value = "/api/posts/{id}" , headers = "X-API-VERSION=2")
     public ResponseEntity<PostDtoV2> getPostByIdV2(@PathVariable(name = "id") long id){
         PostDto postDto = postService.getPostById(id);
         PostDtoV2 postDtoV2 = new PostDtoV2();
