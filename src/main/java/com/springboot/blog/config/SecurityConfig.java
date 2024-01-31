@@ -56,7 +56,7 @@ private JwtAuthenticationFilter authenticationFilter;
                 .authorizeHttpRequests((authorize)->
 
                   authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
-                          .requestMatchers("/api/auth/**").permitAll()
+                          .requestMatchers("/api/v1/auth/**").permitAll()
                           .requestMatchers("/swagger-ui/**").permitAll() // making swagger public accessible
                           .requestMatchers("/v3/api-docs/**").permitAll() // swagger json format accesible
 

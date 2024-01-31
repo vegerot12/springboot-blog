@@ -15,7 +15,7 @@ import java.util.List;
         name="CRUD REST API for Comment resource"
 )
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/v1")
 public class CommentController {
     private CommentService commentService;
 
